@@ -621,42 +621,42 @@ export default function NFTCheckout() {
 
   return (
     <div>
-      <div className="max-w-screen-lg mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 content-center justify-items-center gap-10">
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 content-center justify-items-center gap-6 md:gap-10">
           {/* Left: NFT Image */}
-          <div className="w-full rounded-lg h-[500px] sticky top-0">
+          <div className="w-full rounded-lg h-[300px] sm:h-[400px] md:h-[500px] md:sticky md:top-0 relative z-10 md:z-0">
             <img
-              className="w-full mx-auto rounded-2xl sticky top-[100px]"
+              className="w-full h-full object-contain mx-auto rounded-2xl"
               src={nft.image}
               alt={nft.name}
             />
           </div>
 
           {/* Right: Mint Info */}
-          <div className="p-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] tracking-tight whitespace-nowrap">
+          <div className="p-4 sm:p-6 md:p-10 w-full relative z-0 md:z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] tracking-tight">
               {nft.name}
             </h1>
-            <div className="flex items-center gap-3 mt-4 mb-4 ml-2">
+            <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4 mb-3 sm:mb-4 ml-0 sm:ml-2">
               <div className="font-PTSans outline-1 outline-dashed outline-offset-2 rounded-sm px-3 py-1">
                 <p className="text-xs text-center">{nft.blockChain}</p>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg border border-white/20 backdrop-blur-sm ml-6">
+              <div className="flex items-center gap-1.5 px-2 py-1 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg border border-white/20 backdrop-blur-sm ml-6">
                 <a 
                   href="https://app.metamask.io/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex-shrink-0"
                 >
-                  <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-6 h-6 flex-shrink-0 object-contain bg-transparent hover:opacity-80 transition-opacity" />
+                  <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-5 h-5 flex-shrink-0 object-contain bg-transparent hover:opacity-80 transition-opacity" />
                 </a>
-                <span className="text-white/70 text-sm font-semibold mx-1">✖</span>
+                <span className="text-white/70 text-xs font-semibold mx-0.5">✖</span>
                 <Image 
                   src="/Netlify.png" 
                   alt="Logo" 
                   width={30} 
                   height={30} 
-                  className="w-6 h-6 flex-shrink-0 object-contain bg-transparent" 
+                  className="w-5 h-5 flex-shrink-0 object-contain bg-transparent" 
                   style={{ 
                     backgroundColor: 'transparent',
                     background: 'transparent',
@@ -666,12 +666,12 @@ export default function NFTCheckout() {
               </div>
             </div>
 
-            <div className="flex w-full items-stretch gap-2 backdrop-blur-md">
+            <div className="flex flex-row w-full items-stretch gap-2 backdrop-blur-md">
               <div className="flex-[2]">
                 <ShortenAddress address={nft.address} explorerLink={`https://etherscan.io/address/${nft.address}`} />
               </div>
               <p
-                className="flex justify-center items-center gap-2 p-2 px-5 rounded-lg cursor-pointer bg-[#14285F]/50 backdrop-blur-lg flex-[0.8] tooltip h-full"
+                className="flex justify-center items-center gap-2 p-2 px-3 sm:px-4 md:px-5 rounded-lg cursor-pointer bg-[#14285F]/50 backdrop-blur-lg flex-[0.8] tooltip h-full min-h-[44px]"
                 data-tip="Fee"
               >
                 <LuCircleDollarSign />
@@ -679,20 +679,20 @@ export default function NFTCheckout() {
               </p>
             </div>
 
-            <div className="mt-5">
-              <div className="space-y-4 text-white/90 leading-relaxed">
-                <h3 className="text-xl font-semibold text-white mb-4">Description</h3>
-                <div className="space-y-4">
-                  <p className="text-base italic text-cyan-400/90">
+            <div className="mt-4 sm:mt-5">
+              <div className="space-y-3 sm:space-y-4 text-white/90 leading-relaxed">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4">Description</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-sm sm:text-base italic text-cyan-400/90">
                     Before the dawn of decentralization, you lit the very first light.
                   </p>
-                  <p className="text-base">
+                  <p className="text-sm sm:text-base">
                     MetaMask Pioneers is more than just an NFT; it is your indelible on-chain badge of honor in this digital revolution. It chronicles every DApp interaction, every gas confirmation, and your unwavering belief in a decentralized future.
                   </p>
-                  <p className="text-base">
+                  <p className="text-sm sm:text-base">
                     Not everyone has the courage to venture into the unknown, but you did. This fox mask belongs solely to the pioneers who dared to forge a path through the wilderness.
                   </p>
-                  <p className="text-base font-semibold text-cyan-400/90 border-l-4 border-cyan-400/50 pl-4 py-2 bg-cyan-400/5 rounded-r">
+                  <p className="text-sm sm:text-base font-semibold text-cyan-400/90 border-l-4 border-cyan-400/50 pl-3 sm:pl-4 py-2 bg-cyan-400/5 rounded-r">
                     A Tribute to the Pioneers: Your loyalty defined our present; your holding will shape our future.
                   </p>
                 </div>
@@ -708,7 +708,7 @@ export default function NFTCheckout() {
                         <button
                           onClick={handleCheckEligibility}
                           disabled={isCheckingEligibility || isLoading}
-                          className="bg-gradient-to-r from-cyan-400 via-sky-600 to-blue-800 text-white font-semibold py-2 px-10 rounded hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed mb-4"
+                          className="w-full bg-gradient-to-r from-cyan-400 via-sky-600 to-blue-800 text-white font-semibold py-3 sm:py-2 px-6 sm:px-10 rounded hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed mb-4 text-sm sm:text-base"
                         >
                           {isCheckingEligibility ? (
                             <span className="flex items-center justify-center gap-2">
@@ -740,7 +740,7 @@ export default function NFTCheckout() {
                         <button
                           onClick={handleMint}
                           disabled={(tasks?.length > 0 && !allTasksCompleted) || isLoading || !isEligible}
-                          className="bg-indigo-600 text-white font-semibold py-2 px-10 rounded hover:bg-indigo-700 hover:text-white transition disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full bg-indigo-600 text-white font-semibold py-3 sm:py-2 px-6 sm:px-10 rounded hover:bg-indigo-700 hover:text-white transition disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                         >
                           {isLoading ? (
                             <span className="flex items-center justify-center gap-2">

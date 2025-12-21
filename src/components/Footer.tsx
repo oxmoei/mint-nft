@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 mt-20">
-      <div className="container mx-auto px-6 md:px-10 lg:px-70 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+    <footer className="bg-black border-t border-white/10 mt-12 sm:mt-16 md:mt-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-70 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-8">
           {/* Brand - 占据更多空间 */}
-          <aside className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-6">
+          <aside className="lg:col-span-4 mb-8 lg:mb-0">
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
               <img
                 src="/Netlify.png"
                 alt="Netlify logo"
@@ -20,40 +20,40 @@ export default function Footer() {
                   mixBlendMode: 'normal'
                 }}
               />
-              <h5 className="text-2xl font-bold text-white">Netlify</h5>
+              <h5 className="text-xl sm:text-2xl font-bold text-white">Netlify</h5>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Your ultimate gateway to multiverse of dApps, NFTs, and
               more—on one seamless platform.
             </p>
-            <p className="text-gray-600 text-xs mt-6">
+            <p className="text-gray-600 text-xs mt-4 sm:mt-6">
               ©Copyright 2025, all rights reserved by Netlify
             </p>
           </aside>
 
           {/* Links Container */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16 xl:gap-20 lg:justify-items-end lg:ml-auto">
+          <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-16 xl:gap-20 lg:justify-items-end lg:ml-auto">
             {/* NETLIFY Links */}
-            <nav>
-              <h3 className="text-white font-semibold text-lg mb-5">NETLIFY</h3>
-              <ul className="space-y-3">
+            <nav className="min-w-0">
+              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">NETLIFY</h3>
+              <ul className="space-y-1 sm:space-y-2 md:space-y-3">
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     Dapps
                   </span>
                 </li>
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     NFTs
                   </span>
                 </li>
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     Staking
                   </span>
                 </li>
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     About
                   </span>
                 </li>
@@ -61,26 +61,26 @@ export default function Footer() {
             </nav>
 
             {/* Resources */}
-            <nav>
-              <h3 className="text-white font-semibold text-lg mb-5">Resources</h3>
-              <ul className="space-y-3">
+            <nav className="min-w-0">
+              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">Resources</h3>
+              <ul className="space-y-1 sm:space-y-2 md:space-y-3">
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     Docs
                   </span>
                 </li>
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     Contact
                   </span>
                 </li>
                 <li>
-                  <Link href="/id" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  <Link href="/id" className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm">
                     Netlify ID
                   </Link>
                 </li>
                 <li>
-                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
+                  <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
                     Brandkit
                   </span>
                 </li>
@@ -88,9 +88,9 @@ export default function Footer() {
             </nav>
 
             {/* Community */}
-            <nav>
-              <h3 className="text-white font-semibold text-lg mb-5">Community</h3>
-              <ul className="space-y-3">
+            <nav className="min-w-0">
+              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">Community</h3>
+              <ul className="space-y-1 sm:space-y-2 md:space-y-3">
                 <li>
                   <a
                     href="https://x.com/0xAlze"
