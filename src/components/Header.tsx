@@ -65,7 +65,7 @@ export default function Header() {
           </ul>
 
           {/* Connect Wallet Button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-shrink-0">
             <WalletConnect />
 
             {/* Mobile Menu Button */}
