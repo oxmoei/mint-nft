@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import WalletConnect from './WalletConnect';
 
 export default function Header() {
@@ -21,8 +20,8 @@ export default function Header() {
           {/* Logo */}
           <a href="https://www.alze.xyz/" className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
             <div className="relative">
-              <Image
-                src="/Netlify-logo.png"
+              <img
+                src="/Netlify-logo1.png"
                 alt="Netlify logo"
                 width={80}
                 height={80}
