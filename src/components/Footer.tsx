@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 mt-20">
-      <div className="container mx-auto px-6 md:px-10 lg:px-70 py-16">
+      <div className="max-w-screen-lg mx-auto px-6 md:px-10 lg:px-70 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand - 占据更多空间 */}
           <aside className="lg:col-span-4">
@@ -32,7 +32,7 @@ export default function Footer() {
           </aside>
 
           {/* Links Container */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 lg:justify-items-end lg:ml-auto">
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-16 xl:gap-20 lg:justify-items-end lg:ml-auto">
             {/* NETLIFY Links */}
             <nav>
               <h3 className="text-white font-semibold text-lg mb-5">NETLIFY</h3>
