@@ -32,7 +32,7 @@ export default function Footer() {
           </aside>
 
           {/* Links Container */}
-          <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-16 xl:gap-20 lg:justify-items-end lg:ml-auto">
+          <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-12 lg:justify-items-end lg:ml-auto">
             {/* NETLIFY Links */}
             <nav className="min-w-0">
               <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">NETLIFY</h3>

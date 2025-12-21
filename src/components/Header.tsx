@@ -23,7 +23,7 @@ export default function Header() {
               <img
                 src="/Netlify-logo1.png"
                 alt="Netlify logo"
-                className="bg-transparent relative z-10 opacity-100 h-8 sm:h-10 w-auto"
+                className="bg-transparent relative z-10 opacity-100 h-6 sm:h-8 md:h-10 w-auto"
                 style={{ 
                   backgroundColor: 'transparent',
                   background: 'transparent',
@@ -36,29 +36,29 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-4 lg:gap-6">
+          <ul className="hidden md:flex items-center gap-6">
             <li>
-              <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <span>HOME</span>
               </a>
             </li>
             <li>
-              <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                 🔥 NETLIFY ID
               </a>
             </li>
             <li>
-              <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <span>NETLIFY NFT</span>
               </a>
             </li>
             <li>
-              <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                 📍STAKE
               </a>
             </li>
             <li>
-              <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <span>LEARN</span>
               </a>
             </li>
