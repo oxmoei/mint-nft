@@ -1,14 +1,11 @@
 'use client';
 
-import { useAccount, useConnect, useDisconnect } from 'wagmi';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import WalletConnect from './WalletConnect';
 
 export default function Header() {
-  const { address, isConnected } = useAccount();
-  const { connect, connectors } = useConnect();
-  const { disconnect } = useDisconnect();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -16,13 +13,6 @@ export default function Header() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const handleConnect = () => {
-    const injectedConnector = connectors.find(c => c.id === 'injected');
-    if (injectedConnector) {
-      connect({ connector: injectedConnector });
-    }
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
@@ -71,26 +61,7 @@ export default function Header() {
 
           {/* Connect Wallet Button */}
           <div className="flex items-center gap-4">
-            {mounted && isConnected ? (
-              <div className="flex items-center gap-3">
-                <div className="text-sm text-white/80 font-mono">
-                  {address?.slice(0, 6)}...{address?.slice(-4)}
-                </div>
-                <button
-                  onClick={() => disconnect()}
-                  className="px-4 py-2 connectButton text-white rounded-lg transition-colors"
-                >
-                  Disconnect
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={handleConnect}
-                className="px-6 py-2 connectButton text-white rounded-lg transition-all font-medium"
-              >
-                Connect Wallet
-              </button>
-            )}
+            <WalletConnect />
 
             {/* Mobile Menu Button */}
             <button

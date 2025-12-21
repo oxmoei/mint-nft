@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/png" href="/assets/logo-DPgmRCGh.png" />
+        <link rel="icon" type="image/webp" href="/assets/logo.webp" />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"

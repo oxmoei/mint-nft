@@ -11,8 +11,8 @@ export default function Footer() {
               <img
                 src="/assets/logo-DPgmRCGh.png"
                 alt="Alze logo"
-                width={64}
-                height={64}
+                width={48}
+                height={48}
                 className="rounded-lg"
               />
               <h5 className="text-2xl font-bold text-white">Alze</h5>
@@ -27,7 +27,7 @@ export default function Footer() {
           </aside>
 
           {/* Links Container */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12 lg:gap-20 lg:justify-items-end lg:ml-auto">
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 lg:justify-items-end lg:ml-auto">
             {/* ALZE Links */}
             <nav>
               <h3 className="text-white font-semibold text-lg mb-5">ALZE</h3>
