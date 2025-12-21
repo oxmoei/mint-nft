@@ -23,8 +23,8 @@ export default function Header() {
               <img
                 src="/Netlify-logo1.png"
                 alt="Netlify logo"
-                width={80}
-                height={80}
+                width={30}
+                height={30}
                 className="bg-transparent relative z-10 opacity-100"
                 style={{ 
                   width: 'auto', 
