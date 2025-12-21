@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
     ];
   },
   // Webpack configuration to handle file paths with special characters
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, webpack }) => {
     // Fix for file system paths with special characters
     if (!isServer) {
       config.resolve.fallback = {
@@ -49,7 +49,16 @@ const nextConfig: NextConfig = {
       '@gemini-wallet/core': false,
       'porto': false,
       '@safe-global/safe-apps-sdk': false,
+      '@safe-global/safe-apps-provider': false,
+      '@walletconnect/ethereum-provider': false,
     };
+    
+    // Use IgnorePlugin to ignore optional dependencies from @wagmi/connectors
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^(@base-org\/account|@coinbase\/wallet-sdk|@gemini-wallet\/core|porto|@safe-global\/safe-apps-sdk|@safe-global\/safe-apps-provider|@walletconnect\/ethereum-provider)$/,
+      })
+    );
     
     return config;
   },
