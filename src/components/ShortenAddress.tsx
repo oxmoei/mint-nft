@@ -33,7 +33,7 @@ export default function ShortenAddress({ address, explorerLink }: ShortenAddress
       href={explorerUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 p-2 px-4 rounded-lg cursor-pointer bg-[#14285F]/50 backdrop-blur-lg hover:bg-[#14285F]/70 transition-colors h-full"
+      className="group flex items-center gap-2 p-2 px-4 rounded-lg cursor-pointer bg-[#14285F]/50 backdrop-blur-lg hover:bg-[#14285F]/70 transition-colors h-full"
     >
       <div
         onClick={copyToClipboard}
@@ -46,7 +46,7 @@ export default function ShortenAddress({ address, explorerLink }: ShortenAddress
         )}
       </div>
       <span className="font-mono text-sm text-white flex-1">{shortenedAddress}</span>
-      <RxOpenInNewWindow className="text-white/70 ml-auto" />
+      <RxOpenInNewWindow className="text-white/70 group-hover:text-green-400 ml-auto transition-colors" />
     </a>
   );
 }

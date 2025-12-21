@@ -642,7 +642,14 @@ export default function NFTCheckout() {
                 <p className="text-xs text-center">{nft.blockChain}</p>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg border border-white/20 backdrop-blur-sm ml-6">
-                <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-6 h-6 flex-shrink-0 object-contain bg-transparent" />
+                <a 
+                  href="https://app.metamask.io/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                >
+                  <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-6 h-6 flex-shrink-0 object-contain bg-transparent hover:opacity-80 transition-opacity" />
+                </a>
                 <span className="text-white/70 text-sm font-semibold mx-1">✖</span>
                 <Image 
                   src="/Netlify.png" 
