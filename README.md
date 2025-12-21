@@ -80,6 +80,28 @@ src/
 
 ## 部署
 
+### Netlify
+
+项目已配置支持 Netlify 部署：
+
+1. **通过 Netlify UI 部署**：
+   - 访问 [Netlify](https://app.netlify.com)
+   - 点击 "Add new site" → "Import an existing project"
+   - 连接你的 Git 仓库
+   - Netlify 会自动检测 `netlify.toml` 配置
+   - 设置环境变量（如 `NEXT_PUBLIC_MORALIS_API_KEY`）
+   - 点击 "Deploy site"
+
+2. **通过 Netlify CLI 部署**：
+   ```bash
+   npm install -g netlify-cli
+   netlify deploy --prod
+   ```
+
+3. **环境变量配置**：
+   在 Netlify 项目设置中添加以下环境变量：
+   - `NEXT_PUBLIC_MORALIS_API_KEY` - Moralis API Key（用于检查 eligibility）
+
 ### Vercel
 
 最简单的方式是使用 [Vercel Platform](https://vercel.com/new) 部署。
