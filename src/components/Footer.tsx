@@ -9,28 +9,33 @@ export default function Footer() {
           <aside className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/assets/logo-DPgmRCGh.png"
-                alt="Alze logo"
-                width={48}
-                height={48}
-                className="rounded-lg"
+                src="/Netlify.png"
+                alt="Netlify logo"
+                width={25}
+                height={25}
+                className="bg-transparent"
+                style={{ 
+                  backgroundColor: 'transparent',
+                  background: 'transparent',
+                  mixBlendMode: 'normal'
+                }}
               />
-              <h5 className="text-2xl font-bold text-white">Alze</h5>
+              <h5 className="text-2xl font-bold text-white">Netlify</h5>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Your ultimate gateway to multiverse of dApps, NFTs, and
               more—on one seamless platform.
             </p>
             <p className="text-gray-600 text-xs mt-6">
-              ©Copyright 2025, all rights reserved by Alze
+              ©Copyright 2025, all rights reserved by Netlify
             </p>
           </aside>
 
           {/* Links Container */}
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 lg:justify-items-end lg:ml-auto">
-            {/* ALZE Links */}
+            {/* NETLIFY Links */}
             <nav>
-              <h3 className="text-white font-semibold text-lg mb-5">ALZE</h3>
+              <h3 className="text-white font-semibold text-lg mb-5">NETLIFY</h3>
               <ul className="space-y-3">
                 <li>
                   <span className="text-gray-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer">
@@ -71,7 +76,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/id" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-                    Alze ID
+                    Netlify ID
                   </Link>
                 </li>
                 <li>

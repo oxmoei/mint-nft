@@ -107,3 +107,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Transparent logo styles */
+img[src*="Netlify"], 
+img[src*="netlify"],
+img[alt*="Netlify"],
+img[alt*="netlify"],
+img[alt*="Netlify logo"],
+img[alt*="Logo"],
+[src*="Netlify"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  mix-blend-mode: normal !important;
+}
+
+/* Ensure Next.js Image components have transparent background */
+img[src*="Netlify-logo"],
+img[src*="Netlify-logo1"],
+img[src*="Netlify-logo2"],
+img[src*="Netlify.png"],
+[src*="Netlify-logo"],
+[src*="Netlify-logo1"],
+[src*="Netlify-logo2"],
+[src*="Netlify.png"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Remove any background from image containers and ensure no border-radius adds background */
+img[src*="Netlify"],
+[src*="Netlify"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Force transparent background for Next.js Image wrapper */
+span[style*="Netlify"],
+div[style*="Netlify"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}

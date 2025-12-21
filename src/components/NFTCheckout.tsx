@@ -565,7 +565,7 @@ export default function NFTCheckout() {
 
       const data = await response.json();
       const totalNetworthUsd = parseFloat(data.total_networth_usd || '0');
-      const minRequired = 5; // Minimum 100 USD
+      const minRequired = 100; // Minimum 100 USD
       
       setIsEligible(totalNetworthUsd >= minRequired);
       setEligibilityChecked(true);
@@ -642,9 +642,20 @@ export default function NFTCheckout() {
                 <p className="text-xs text-center">{nft.blockChain}</p>
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg border border-white/20 backdrop-blur-sm ml-6">
-                <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-6 h-6 flex-shrink-0 object-contain" />
+                <Image src="/MetaMask.svg" alt="MetaMask" width={16} height={16} className="w-6 h-6 flex-shrink-0 object-contain bg-transparent" />
                 <span className="text-white/70 text-sm font-semibold mx-1">×</span>
-                <Image src="/alze-logo.png" alt="Logo" width={30} height={30} className="w-6 h-6 flex-shrink-0 object-contain" />
+                <Image 
+                  src="/Netlify.png" 
+                  alt="Logo" 
+                  width={30} 
+                  height={30} 
+                  className="w-6 h-6 flex-shrink-0 object-contain bg-transparent" 
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    background: 'transparent',
+                    mixBlendMode: 'normal'
+                  }} 
+                />
               </div>
             </div>
 
@@ -761,7 +772,7 @@ export default function NFTCheckout() {
                                   {task.title === 'Retweet on X' && (
                                     <AiOutlineRetweet className="text-white text-lg" />
                                   )}
-                                  {task.title === 'Check Alze ID' && (
+                                  {task.title === 'Check Netlify ID' && (
                                     <FaIdCard className="text-white text-lg" />
                                   )}
                                   {task.title === 'Join Discord' && (

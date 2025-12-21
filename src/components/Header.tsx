@@ -19,43 +19,53 @@ export default function Header() {
       <nav className="container mx-auto px-6 md:px-10 lg:px-70 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/assets/logo-DPgmRCGh.png"
-              alt="alzelogo"
-              width={80}
-              height={80}
-              className="rounded"
-              style={{ width: 'auto', height: 'auto' }}
-            />
-          </Link>
+          <a href="https://www.alze.xyz/" className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+            <div className="relative">
+              <Image
+                src="/Netlify-logo.png"
+                alt="Netlify logo"
+                width={80}
+                height={80}
+                className="bg-transparent relative z-10 opacity-100"
+                style={{ 
+                  width: 'auto', 
+                  height: 'auto', 
+                  backgroundColor: 'transparent',
+                  background: 'transparent',
+                  opacity: 1,
+                  filter: 'invert(1) brightness(1.2) contrast(1.1)',
+                  WebkitFilter: 'invert(1) brightness(1.2) contrast(1.1)'
+                }}
+              />
+            </div>
+          </a>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-6">
             <li>
-              <Link href="/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1">
+              <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <span>HOME</span>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/id" className="text-white hover:text-cyan-400 transition-colors">
-                🔥 ALZE ID
-              </Link>
+              <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
+                🔥 NETLIFY ID
+              </a>
             </li>
             <li>
-              <Link href="/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1">
-                <span>ALZE NFT</span>
-              </Link>
+              <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+                <span>NETLIFY NFT</span>
+              </a>
             </li>
             <li>
-              <Link href="/stake" className="text-white hover:text-cyan-400 transition-colors">
+              <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
                 📍STAKE
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1">
+              <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
                 <span>LEARN</span>
-              </Link>
+              </a>
             </li>
           </ul>
 
@@ -85,29 +95,29 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
             <ul className="flex flex-col gap-4">
               <li>
-                <Link href="/" className="text-white hover:text-cyan-400 transition-colors block">
+                <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
                   HOME
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/id" className="text-white hover:text-cyan-400 transition-colors block">
-                  🔥 ALZE ID
-                </Link>
+                <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
+                  🔥 NETLIFY ID
+                </a>
               </li>
               <li>
-                <Link href="/nfts" className="text-white hover:text-cyan-400 transition-colors block">
-                  ALZE NFT
-                </Link>
+                <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
+                  NETLIFY NFT
+                </a>
               </li>
               <li>
-                <Link href="/stake" className="text-white hover:text-cyan-400 transition-colors block">
+                <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
                   📍STAKE
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/learn/phase1" className="text-white hover:text-cyan-400 transition-colors block">
+                <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
                   LEARN
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
