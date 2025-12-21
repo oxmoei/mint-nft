@@ -863,7 +863,7 @@ export default function NFTCheckout() {
                   </>
                 ) : (
                   <div className="flex-col pb-[11%] items-center">
-                    <WalletConnect className="py-3 px-10" />
+                    <WalletConnect className="w-[140px] sm:w-[160px] md:w-[200px]" />
                     <p className="text-sm mt-2 text-yellow-400 text-center">
                       ⚠ Connect your wallet before minting
                     </p>
