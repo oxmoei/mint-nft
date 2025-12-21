@@ -633,10 +633,12 @@ export default function NFTCheckout() {
           </div>
 
           {/* Right: Mint Info */}
-          <div className="p-4 sm:p-6 md:p-10 w-full relative z-0 md:z-10 min-w-0">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] tracking-tight md:whitespace-nowrap overflow-visible">
-              {nft.name}
-            </h1>
+          <div className="p-4 sm:p-6 md:p-10 w-full relative z-0 md:z-10">
+            <div className="w-full max-w-full">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] tracking-tight md:whitespace-nowrap">
+                {nft.name}
+              </h1>
+            </div>
             <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4 mb-3 sm:mb-4 ml-0 sm:ml-2">
               <div className="font-PTSans outline-1 outline-dashed outline-offset-2 rounded-sm px-3 py-1">
                 <p className="text-xs text-center">{nft.blockChain}</p>
@@ -699,7 +701,7 @@ export default function NFTCheckout() {
               </div>
 
               {/* Mint Section */}
-              <div className="card-actions justify-start mt-10">
+              <div className="card-actions justify-start mt-10 w-full">
                 {walletConnected ? (
                   <>
                     <div className="grid grid-cols-1 w-full">
