@@ -259,7 +259,7 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
         disabled
       >
         <span className="hidden sm:inline">Connect Wallet</span>
-        <span className="sm:hidden">connect</span>
+        <span className="sm:hidden">Connect</span>
       </button>
     );
   }
@@ -287,7 +287,7 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
                 ) : (
                   <>
                     <span className="hidden sm:inline">Connect Wallet</span>
-                    <span className="sm:hidden">connect</span>
+                    <span className="sm:hidden">Connect</span>
                   </>
                 )}
               </span>
