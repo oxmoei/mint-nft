@@ -40,6 +40,17 @@ const nextConfig: NextConfig = {
         tls: false,
       };
     }
+    
+    // Ignore optional dependencies from @wagmi/connectors that we don't use
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@base-org/account': false,
+      '@coinbase/wallet-sdk': false,
+      '@gemini-wallet/core': false,
+      'porto': false,
+      '@safe-global/safe-apps-sdk': false,
+    };
+    
     return config;
   },
   // Development server configuration

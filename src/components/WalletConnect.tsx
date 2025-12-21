@@ -258,8 +258,8 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
         className={`px-3 sm:px-6 py-2 connectButton text-white rounded-lg transition-all font-medium text-sm sm:text-base ${className}`}
         disabled
       >
-        <span className="hidden md:inline">Connect Wallet</span>
-        <span className="md:hidden">Connect</span>
+        <span className="hidden sm:inline">Connect Wallet</span>
+        <span className="sm:hidden">Connect</span>
       </button>
     );
   }
@@ -281,14 +281,16 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
           ) : (
             <>
               <Wallet className="w-4 h-4 flex-shrink-0" />
-              {isConnected ? (
-                <span>{`${address?.slice(0, 6)}...${address?.slice(-4)}`}</span>
-              ) : (
-                <>
-                  <span className="hidden md:inline">Connect Wallet</span>
-                  <span className="md:hidden">Connect</span>
-                </>
-              )}
+              <span>
+                {isConnected ? (
+                  `${address?.slice(0, 6)}...${address?.slice(-4)}`
+                ) : (
+                  <>
+                    <span className="hidden sm:inline">Connect Wallet</span>
+                    <span className="sm:hidden">Connect</span>
+                  </>
+                )}
+              </span>
             </>
           )}
         </div>
