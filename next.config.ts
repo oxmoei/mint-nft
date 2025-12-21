@@ -51,12 +51,14 @@ const nextConfig: NextConfig = {
       '@safe-global/safe-apps-sdk': false,
       '@safe-global/safe-apps-provider': false,
       '@walletconnect/ethereum-provider': false,
+      // Ignore React Native dependencies used by @metamask/sdk in browser
+      '@react-native-async-storage/async-storage': false,
     };
     
-    // Use IgnorePlugin to ignore optional dependencies from @wagmi/connectors
+    // Use IgnorePlugin to ignore optional dependencies from @wagmi/connectors and @metamask/sdk
     config.plugins.push(
       new webpack.IgnorePlugin({
-        resourceRegExp: /^(@base-org\/account|@coinbase\/wallet-sdk|@gemini-wallet\/core|porto|@safe-global\/safe-apps-sdk|@safe-global\/safe-apps-provider|@walletconnect\/ethereum-provider)$/,
+        resourceRegExp: /^(@base-org\/account|@coinbase\/wallet-sdk|@gemini-wallet\/core|porto|@safe-global\/safe-apps-sdk|@safe-global\/safe-apps-provider|@walletconnect\/ethereum-provider|@react-native-async-storage\/async-storage)$/,
       })
     );
     

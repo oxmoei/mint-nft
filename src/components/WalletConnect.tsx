@@ -67,12 +67,13 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
     }
   }, [showWalletSelector]);
 
-  // Auto switch to mainnet on connect
+  // Auto switch to mainnet on connect (only if not already on mainnet)
   useEffect(() => {
-    if (isConnected && !hasRequestedMainnetSwitchRef.current && !switchInProgressRef.current) {
+    if (isConnected && chainId !== mainnet.id && !hasRequestedMainnetSwitchRef.current && !switchInProgressRef.current) {
       hasRequestedMainnetSwitchRef.current = true;
       switchInProgressRef.current = true;
-      (async () => {
+      // Use a small delay to ensure connection is fully established
+      const timer = setTimeout(async () => {
         try {
           await switchChain({ chainId: mainnet.id });
         } catch (error) {
@@ -80,7 +81,12 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
         } finally {
           switchInProgressRef.current = false;
         }
-      })();
+      }, 100);
+      return () => clearTimeout(timer);
+    } else if (isConnected && chainId === mainnet.id) {
+      // Reset flags if already on mainnet
+      hasRequestedMainnetSwitchRef.current = false;
+      switchInProgressRef.current = false;
     }
   }, [isConnected, chainId, switchChain]);
 
@@ -94,10 +100,11 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
     }
   }, [connectError, connecting, isConnected]);
 
-  // Listen to page visibility changes
+  // Listen to page visibility changes (optimized with shorter delay)
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible' && !isConnected && connecting) {
+        // Reduced delay from 1500ms to 300ms for faster reconnection
         setTimeout(() => {
           const w = window as any;
           if (w.ethereum?.selectedAddress) {
@@ -117,7 +124,7 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
           } else {
             setConnecting(false);
           }
-        }, 1500);
+        }, 300);
       }
     };
 
@@ -128,7 +135,7 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('focus', handleVisibilityChange);
     };
-  }, [isConnected, connecting, connect, connectors]);
+  }, [isConnected, connecting, connect]);
 
   // Handle wallet connection with specific connector
   const handleConnectWallet = async (selectedConnector?: any) => {
@@ -176,14 +183,14 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
       
       connect({ connector: connectorToUse });
       
-      setTimeout(() => {
-        setShowWalletSelector(false);
-      }, 200);
+      // Close modal immediately for better UX
+      setShowWalletSelector(false);
       
       if (connectionTimeoutRef.current) {
         clearTimeout(connectionTimeoutRef.current);
       }
       
+      // Reduced timeout from 15s to 10s for faster feedback
       connectionTimeoutRef.current = setTimeout(() => {
         if (!isConnected) {
           setConnecting(false);
@@ -198,7 +205,7 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
             );
           }
         }
-      }, 15000);
+      }, 10000);
     } catch (error: any) {
       console.error('Wallet connection error:', error);
       setStatusError(
@@ -255,11 +262,16 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
   if (!isMounted) {
     return (
       <button
-        className={`px-3 sm:px-6 py-2 connectButton text-white rounded-lg transition-all font-medium text-sm sm:text-base min-w-[140px] md:min-w-[160px] flex-shrink-0 ${className}`}
+        className={`px-3 sm:px-6 py-2 connectButton text-white rounded-lg transition-all font-medium text-sm sm:text-base w-[140px] sm:w-[160px] md:w-[200px] flex-shrink-0 ${className}`}
         disabled
       >
-        <span className="hidden sm:inline">Connect Wallet</span>
-        <span className="sm:hidden">ConnectWallet</span>
+        <div className="flex items-center justify-center gap-1 sm:gap-2 w-full">
+          <Wallet className="w-4 h-4 flex-shrink-0" />
+          <span className="text-center flex-1 min-w-0 truncate">
+            <span className="hidden sm:inline">ConnectWallet</span>
+            <span className="sm:hidden">ConnectWallet</span>
+          </span>
+        </div>
       </button>
     );
   }
@@ -269,19 +281,19 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
       <button
         onClick={handleConnect}
         disabled={connecting}
-        className={`px-3 sm:px-6 py-2 connectButton text-white rounded-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base min-w-[140px] md:min-w-[160px] flex-shrink-0 ${className}`}
+        className={`px-3 sm:px-6 py-2 connectButton text-white rounded-lg transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base w-[140px] sm:w-[160px] md:w-[200px] flex-shrink-0 ${className}`}
       >
-        <div className="flex items-center justify-center gap-1 sm:gap-2">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 w-full">
           {connecting ? (
             <>
-              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin flex-shrink-0"></div>
               <span className="hidden sm:inline">Connecting...</span>
               <span className="sm:hidden">...</span>
             </>
           ) : (
             <>
               <Wallet className="w-4 h-4 flex-shrink-0" />
-              <span>
+              <span className="text-center flex-1 min-w-0 truncate">
                 {isConnected ? (
                   `${address?.slice(0, 6)}...${address?.slice(-4)}`
                 ) : (

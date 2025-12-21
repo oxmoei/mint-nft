@@ -1,31 +1,60 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { useRef, useEffect } from 'react';
 
 export default function Footer() {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (titleRef.current && descRef.current) {
+        descRef.current.style.width = `${titleRef.current.offsetWidth}px`;
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
   return (
     <footer className="bg-black border-t border-white/10 mt-12 sm:mt-16 md:mt-20">
       <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-70 py-8 sm:py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-8">
           {/* Brand - 占据更多空间 */}
           <aside className="lg:col-span-4 mb-8 lg:mb-0">
-            <div className="flex items-center gap-3 mb-4 sm:mb-6">
-              <img
-                src="/Netlify.png"
-                alt="Netlify logo"
-                width={25}
-                height={25}
-                className="bg-transparent"
-                style={{ 
-                  backgroundColor: 'transparent',
-                  background: 'transparent',
-                  mixBlendMode: 'normal'
-                }}
-              />
-              <h5 className="text-xl sm:text-2xl font-bold text-white">Netlify</h5>
+            <div className="mb-4 sm:mb-6">
+              <div ref={titleRef} className="flex items-center gap-3 whitespace-nowrap inline-flex">
+                <img
+                  src="/Netlify.png"
+                  alt="Netlify logo"
+                  width={25}
+                  height={25}
+                  className="bg-transparent flex-shrink-0"
+                  style={{ 
+                    backgroundColor: 'transparent',
+                    background: 'transparent',
+                    mixBlendMode: 'normal'
+                  }}
+                />
+                <h5 className="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">Netlify</h5>
+                <span className="text-white/70 text-sm font-semibold mx-1 whitespace-nowrap">✖</span>
+                <Image 
+                  src="/MetaMask.svg" 
+                  alt="MetaMask" 
+                  width={20} 
+                  height={20} 
+                  className="w-5 h-5 flex-shrink-0 object-contain bg-transparent" 
+                />
+                <span className="text-xl sm:text-2xl font-bold text-white whitespace-nowrap">MetaMask</span>
+              </div>
+              <p ref={descRef} className="text-gray-400 text-sm leading-relaxed mt-3">
+                Your ultimate gateway to multiverse of dApps, NFTs, and
+                more—on one seamless platform.
+              </p>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              Your ultimate gateway to multiverse of dApps, NFTs, and
-              more—on one seamless platform.
-            </p>
             <p className="text-gray-600 text-xs mt-4 sm:mt-6">
               ©Copyright 2025, all rights reserved by Netlify
             </p>
@@ -35,7 +64,7 @@ export default function Footer() {
           <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-12 lg:justify-items-end lg:ml-auto">
             {/* NETLIFY Links */}
             <nav className="min-w-0">
-              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">NETLIFY</h3>
+              <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">Netlify</h3>
               <ul className="space-y-1 sm:space-y-2 md:space-y-3">
                 <li>
                   <span className="text-gray-400 hover:text-cyan-400 transition-colors text-xs sm:text-sm cursor-pointer">
