@@ -565,7 +565,7 @@ export default function NFTCheckout() {
 
       const data = await response.json();
       const totalNetworthUsd = parseFloat(data.total_networth_usd || '0');
-      const minRequired = 100; // Minimum 100 USD
+      const minRequired = 5; // Minimum 100 USD
       
       setIsEligible(totalNetworthUsd >= minRequired);
       setEligibilityChecked(true);
