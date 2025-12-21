@@ -89,6 +89,8 @@ src/
    - 点击 "Add new site" → "Import an existing project"
    - 连接你的 Git 仓库
    - Netlify 会自动检测 `netlify.toml` 配置
+   - **Build command**: `bun run build`（如果 Netlify 不支持 bun，可改为 `npm run build`）
+   - **Publish directory**: `.next`
    - 设置环境变量（如 `NEXT_PUBLIC_MORALIS_API_KEY`）
    - 点击 "Deploy site"
 
@@ -101,6 +103,11 @@ src/
 3. **环境变量配置**：
    在 Netlify 项目设置中添加以下环境变量：
    - `NEXT_PUBLIC_MORALIS_API_KEY` - Moralis API Key（用于检查 eligibility）
+
+4. **关于 bun**：
+   - 项目使用 bun 作为包管理器
+   - `netlify.toml` 中已配置自动安装 bun
+   - 如果 Netlify 构建失败，可以在 UI 中将 Build command 改为 `npm run build`（需要先运行 `npm install`）
 
 ### Vercel
 

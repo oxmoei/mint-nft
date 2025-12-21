@@ -1,5 +1,9 @@
 [build]
-  command = "npm run build"
+  # Base directory: 留空（使用项目根目录）
+  # Build command: 安装 bun 并使用 bun 构建 Next.js 项目
+  # 注意：如果 Netlify 不支持 bun，可以改为使用 npm run build
+  command = "curl -fsSL https://bun.sh/install | bash && export PATH=\"$HOME/.bun/bin:$PATH\" && bun install && bun run build"
+  # Publish directory: Next.js 插件会自动处理，但设置为 .next 作为备用
   publish = ".next"
 
 [[plugins]]
