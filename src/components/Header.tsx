@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Home } from 'lucide-react';
 import WalletConnect from './WalletConnect';
 
 export default function Header() {
@@ -39,6 +40,7 @@ export default function Header() {
           <ul className="hidden md:flex items-center gap-6">
             <li>
               <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+                <Home className="w-4 h-4" />
                 <span>HOME</span>
               </a>
             </li>
@@ -90,7 +92,8 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t border-white/10 pt-4">
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors block" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+                  <Home className="w-4 h-4" />
                   HOME
                 </a>
               </li>

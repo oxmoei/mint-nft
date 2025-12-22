@@ -365,14 +365,14 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
                     }}
                     className="w-full flex items-center gap-4 px-6 py-4 bg-black/40 hover:bg-black/60 border-2 border-[#00d4ff]/20 hover:border-[#00d4ff]/50 rounded-lg transition-all text-left cursor-pointer group backdrop-blur-sm"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center flex-shrink-0 bg-black/40 rounded-lg group-hover:bg-black/60 transition-colors border border-[#00d4ff]/20">
+                    <div className="flex items-center justify-center flex-shrink-0">
                       {isMetaMask ? (
                         <Image
                           src="/MetaMask.svg"
                           alt="MetaMask"
-                          width={40}
-                          height={40}
-                          className="w-10 h-10"
+                          width={28}
+                          height={28}
+                          className="w-7 h-7 object-contain"
                         />
                       ) : (
                         <Wallet className="w-6 h-6 text-white/70" />
