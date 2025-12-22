@@ -51,6 +51,18 @@ export default function WalletConnect({ className = '' }: WalletConnectProps) {
     setIsMounted(true);
   }, []);
 
+  // 当 wagmi 报告已连接时，立即结束本地 connecting 状态并清理超时，立刻显示地址
+  useEffect(() => {
+    if (isConnected) {
+      setConnecting(false);
+      setStatusError(null);
+      if (connectionTimeoutRef.current) {
+        clearTimeout(connectionTimeoutRef.current);
+        connectionTimeoutRef.current = null;
+      }
+    }
+  }, [isConnected]);
+
   // Close wallet selector when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

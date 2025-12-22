@@ -641,7 +641,14 @@ export default function NFTCheckout() {
             </div>
             <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4 mb-3 sm:mb-4 ml-0 sm:ml-2">
               <div className="font-PTSans outline-1 outline-dashed outline-offset-2 rounded-sm px-3 py-1">
-                <p className="text-xs text-center">{nft.blockChain}</p>
+                <div className="flex items-center justify-center gap-2">
+                  <img
+                    src="/ethereum-logo.svg"
+                    alt="Ethereum Logo"
+                    className="h-3 w-3 sm:h-4 sm:w-4 object-contain"
+                  />
+                  <p className="text-xs text-center">{nft.blockChain}</p>
+                </div>
               </div>
               <div className="flex items-center gap-1.5 px-2 py-1 bg-gradient-to-r from-orange-500/20 via-purple-500/20 to-cyan-500/20 rounded-lg border border-white/20 backdrop-blur-sm ml-6">
                 <a 
