@@ -21,8 +21,8 @@ export default function Footer() {
   }, []);
   return (
     <footer className="bg-black border-t border-white/10 mt-12 sm:mt-16 md:mt-20">
-      <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-70 py-8 sm:py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16 max-w-[1920px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-8 xl:gap-12">
           {/* Brand - 占据更多空间 */}
           <aside className="lg:col-span-4 mb-8 lg:mb-0">
             <div className="mb-4 sm:mb-6">
@@ -61,7 +61,7 @@ export default function Footer() {
           </aside>
 
           {/* Links Container */}
-          <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-12 lg:justify-items-end lg:ml-auto">
+          <div className="lg:col-span-8 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 lg:justify-items-end lg:ml-auto">
             {/* NETLIFY Links */}
             <nav className="min-w-0">
               <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg mb-2 sm:mb-3 md:mb-5 whitespace-nowrap">Netlify</h3>

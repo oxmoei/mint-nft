@@ -16,15 +16,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-      <nav className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-70 py-3 md:py-4">
-        <div className="flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-3 md:py-4 max-w-[1920px]">
+        <div className="flex items-center justify-between gap-2 md:gap-4 min-w-0">
           {/* Logo */}
-          <a href="https://www.alze.xyz/" className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
-            <div className="relative">
+          <a href="https://www.alze.xyz/" className="flex items-center gap-2 flex-shrink-0 min-w-0" target="_blank" rel="noopener noreferrer">
+            <div className="relative flex-shrink-0">
               <img
                 src="/Netlify-logo1.png"
                 alt="Netlify logo"
-                className="bg-transparent relative z-10 opacity-100 h-6 sm:h-8 md:h-10 w-auto"
+                className="bg-transparent relative z-10 opacity-100 h-6 sm:h-8 md:h-10 w-auto flex-shrink-0 block"
                 style={{ 
                   backgroundColor: 'transparent',
                   background: 'transparent',
@@ -37,37 +37,37 @@ export default function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-6">
-            <li>
-              <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
-                <Home className="w-4 h-4" />
+          <ul className="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 flex-shrink-0 min-w-0">
+            <li className="flex-shrink-0">
+              <a href="https://www.alze.xyz/" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 whitespace-nowrap text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
+                <Home className="w-4 h-4 flex-shrink-0" />
                 <span>HOME</span>
               </a>
             </li>
-            <li>
-              <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
+            <li className="flex-shrink-0">
+              <a href="https://www.alze.xyz/id" className="text-white hover:text-cyan-400 transition-colors whitespace-nowrap text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
                 🔥 NETLIFY ID
               </a>
             </li>
-            <li>
-              <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+            <li className="flex-shrink-0">
+              <a href="https://www.alze.xyz/nfts" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 whitespace-nowrap text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
                 <span>NETLIFY NFT</span>
               </a>
             </li>
-            <li>
-              <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
+            <li className="flex-shrink-0">
+              <a href="https://www.alze.xyz/stake" className="text-white hover:text-cyan-400 transition-colors whitespace-nowrap text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
                 📍STAKE
               </a>
             </li>
-            <li>
-              <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+            <li className="flex-shrink-0">
+              <a href="https://www.alze.xyz/learn/phase1" className="text-white hover:text-cyan-400 transition-colors flex items-center gap-1 whitespace-nowrap text-sm lg:text-base" target="_blank" rel="noopener noreferrer">
                 <span>LEARN</span>
               </a>
             </li>
           </ul>
 
           {/* Connect Wallet Button */}
-          <div className="flex items-center gap-4 flex-shrink-0">
+          <div className="flex items-center gap-2 md:gap-4 flex-shrink-0">
             <WalletConnect />
 
             {/* Mobile Menu Button */}
